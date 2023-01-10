@@ -1,0 +1,12 @@
+ErrorDocument 403 /blogphp/view/error.php
+ErrorDocument 404 /blogphp/view/error.php
+ErrorDocument 405 /blogphp/view/error.php
+ErrorDocument 408 /blogphp/view/error.php
+ErrorDocument 500 /blogphp/view/error.php
+ErrorDocument 502 /blogphp/view/error.php
+ErrorDocument 504 /blogphp/view/error.php
+
+RewriteEngine On
+RewriteRule ^([^_]*)_([^_]*)\.html$ /blogphp/?p=$1&a=$2 [L]
+RewriteRule ^([^_]*)_([^_]*)_([^_]*)\.html$ /blogphp/?p=$1&a=$2&id=$3 [L]
+RewriteRule ^([^_]*)_([^_]*)_([^_]*)_([^_]*)_([^_]*)\.html$ /blogphp/?p=$1&a=$2&postid=$3&commentId=$4&vote=$5 [L]
