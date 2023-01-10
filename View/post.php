@@ -2,7 +2,7 @@
 <?php require 'inc/topbar.php' ?>
 
 <main>
-    <div class="container">
+    <div class="banniere_4">
 
         <!-- Article -->
 

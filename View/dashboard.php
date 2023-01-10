@@ -1,7 +1,7 @@
 <?php require 'inc/header.php' ?>
 <?php require 'inc/topbar.php' ?>
 
-<div class="container">
+<div class="banniere_4">
   <h2>Tableau de bord</h2>
   <div class="row">
     <?php for($i=0;$i<$this->length;$i++): ?>
@@ -20,7 +20,7 @@
 
   <h4>Commentaires non lus</h4>
   <br>
-  <div class="row white z-depth-3">
+  <div class="row z-depth-3">
     <div class="col s12">
       <ul class="tabs tabs-fixed-width">
         <li class="tab"><a class="" href="#notSignaled"><strong>Non signalés</strong></a></li>
@@ -124,3 +124,4 @@
 
 
 </div>
+<?php require 'inc/footer.php' ?>

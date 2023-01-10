@@ -1,23 +1,23 @@
 <?php require 'inc/header.php' ?>
 <?php require 'inc/topbar.php' ?>
 
-<div class="container">
+<div class="banniere_4">
   <?php require 'inc/msg.php' ?>
 
   <?php if (empty($this->oPost)): ?>
-      <p class="error">Cet article n'existe pas !</p>
+      <p class="error">Ce programme n'existe pas !</p>
   <?php else: ?>
-    <h1>Modifier l'article :</h1>
+    <h1>Modifier l'article</h1>
     <form method="post" enctype="multipart/form-data">
     	<div class="row">
 
     		<div class="input-field col s12">
     			<input type="text" name="title" id="title" value="<?=htmlspecialchars($this->oPost->title)?>" required="required">
-    			<label for="title">Titre de l'article</label>
+    			<label for="title">Titre du programme</label>
     		</div>
 
     		<div class="input-field col s12">
-          <label for="editable">Contenu de l'article</label>
+          <label for="editable">Contenu du programme</label>
           <br>
     			<textarea name="body" id="editable" class="materialize-textarea"><?=$this->oPost->body?></textarea>
     		</div>
@@ -43,3 +43,4 @@
     </form>
   <?php endif ?>
 </div>
+<?php require 'inc/footer.php' ?>

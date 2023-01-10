@@ -1,7 +1,7 @@
 <?php require 'inc/header.php' ?>
 <?php require 'inc/topbar.php' ?>
 
-<div class="container">
+<div class="banniere_4">
   <?php if (empty($this->oPosts)): ?>
     <h1>Il n'y a aucun article.</h1>
     <p><button type="button" onclick="window.location='<?=ROOT_URL?>admin_add.html'" class="btn waves-effect waves-light">Ajoutez votre premier article!</button></p>
@@ -35,3 +35,4 @@
   </table>
 </div>
 <?php endif ?>
+<?php require 'inc/footer.php' ?>

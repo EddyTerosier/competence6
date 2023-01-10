@@ -1,7 +1,7 @@
 <?php require 'inc/header.php' ?>
 <?php require 'inc/topbar.php' ?>
 
-<div class="container">
+<div class="banniere_4">
   <h1>Poster un article</h1>
   <?php require 'inc/msg.php' ?>
   <form method="post" enctype="multipart/form-data">
@@ -37,3 +37,4 @@
 	</div>
 </form>
 </div>
+<?php require 'inc/footer.php' ?>
