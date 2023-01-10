@@ -137,7 +137,7 @@ class Blog
 		if (isset($_POST['submit']))
 		{
 			$sPassword = htmlspecialchars(trim($_POST['password']));
-      $sPassword_again = htmlspecialchars(trim($_POST['password_again']));
+      		$sPassword_again = htmlspecialchars(trim($_POST['password_again']));
 			$sEmail = htmlspecialchars(trim($_POST['email']));
 			$sPseudo = htmlspecialchars(trim($_POST['pseudo']));
 

@@ -15,7 +15,7 @@
 					<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Giga+</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" id="4" href="Dream-gym.php#ancre">Inscription</a>
+                            <a class="dropdown-item" id="4" href="blog_registration.html">Inscription</a>
 							<?php if (empty($_SESSION['is_admin']) && empty($_SESSION['is_user'])): ?>
                             <a class="dropdown-item" id="5" href="<?=ROOT_URL?>blog_login.html"">Connexion</a>
 							<?php endif ?>
@@ -38,20 +38,6 @@
                     <input class="form-control me-sm-2" type="text" placeholder="Search"/>
                     <button class="btn btn-outline-custom my-2 my-sm-0" type="submit">Rechercher</button>
                 </form>
-
-				<ul class="side-nav" id="mobile-menu">
-					<?php if (!empty($_SESSION['is_admin'])): ?>
-					<li class="<?php echo ($_GET['a']=="dashboard")?"active" : ""; ?>"><a href="<?=ROOT_URL?>admin_login.html">Dashboard</a></li>
-					<?php endif ?>
-
-					<?php if (!empty($_SESSION['is_admin'])): ?>
-					<li class="<?php echo ($_GET['a']=="edit")?"active" : ""; ?>"><a href="<?=ROOT_URL?>admin_edit.html">Edition</a></li>
-					<?php endif ?>
-
-					<?php if (!empty($_SESSION['is_admin']) || !empty($_SESSION['is_user'])): ?>
-					<li><a href="<?=ROOT_URL?>?p=blog&amp;a=logout">Déconnexion</a></li>
-					<?php endif ?>
-				</ul>
 			</div>
 		</div>
 	</nav>
