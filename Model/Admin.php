@@ -2,7 +2,7 @@
 
 namespace BlogPhp\Model;
 
-class Admin extends Blog
+class Admin extends dreamgym
 {
 
   /* ========== SELECT ========== */

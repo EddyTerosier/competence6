@@ -1,8 +1,8 @@
 <?php require 'inc/header.php' ?>
 <?php require 'inc/topbar.php' ?>
 
-<div class="banniere_4">
-  <h2>Tableau de bord</h2>
+<div class="backgroundProgramme">
+  <h1>Tableau de bord</h1>
   <div class="row">
     <?php for($i=0;$i<$this->length;$i++): ?>
 			<div class="col l3 m3 s12">

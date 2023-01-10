@@ -2,7 +2,7 @@
 
 namespace BlogPhp\Model;
 
-class Blog
+class dreamgym
 {
   protected $oDb;
 

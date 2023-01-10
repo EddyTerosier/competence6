@@ -2,7 +2,7 @@
 
 namespace BlogPhp\Controller;
 
-class Admin extends Blog
+class Admin extends dreamgym
 {
 
     /* ================ ACTIONS AVEC VUS ================ */
@@ -11,7 +11,7 @@ class Admin extends Blog
     public function edit()
     {
       if (!$this->isLogged())
-      header('Location: blog_index.html');
+      header('Location: dreamgym_index.html');
 
       $this->oUtil->oPosts = $this->oModel->getAll();
       $this->oUtil->getView('edit');
@@ -23,7 +23,7 @@ class Admin extends Blog
     public function editPost()
     {
       if (!$this->isLogged())
-      header('Location: blog_index.html');
+      header('Location: dreamgym_index.html');
 
       if (isset($_POST['edit_submit']))
       {
@@ -34,7 +34,7 @@ class Admin extends Blog
         else
         {
           $this->oUtil->getModel('Admin');
-          $this->oModel = new \BlogPhp\Model\Admin;
+          $this->oModel = new \blogPhp\Model\Admin;
 
           $aData = array('post_id' => $_GET['id'], 'title' => $_POST['title'], 'body' => $_POST['body']);
           $this->oModel->update($aData);
@@ -68,7 +68,7 @@ class Admin extends Blog
     public function add()
     {
       if (!$this->isLogged())
-      header('Location: blog_index.html');
+      header('Location: dreamgym_index.html');
 
       if (isset($_POST['add_submit']))
       {
@@ -108,7 +108,7 @@ class Admin extends Blog
     public function dashboard()
     {
       if (!$this->isLogged())
-      header('Location: blog_index.html');
+      header('Location: dreamgym_index.html');
 
       $this->oUtil->getModel('Admin');
       $this->oModel = new \BlogPhp\Model\Admin;
@@ -163,7 +163,7 @@ class Admin extends Blog
     public function delete()
     {
       if (!$this->isLogged())
-      header('Location: blog_index.html');
+      header('Location: dreamgym_index.html');
 
       $this->oUtil->getModel('Admin');
       $this->oModel = new \BlogPhp\Model\Admin;
@@ -179,7 +179,7 @@ class Admin extends Blog
     public function seeCommentJs()
     {
       if (!$this->isLogged())
-      header('Location: blog_index.html');
+      header('Location: dreamgym_index.html');
 
       $this->oUtil->getModel('Admin');
       $this->oModel = new \BlogPhp\Model\Admin;
@@ -191,7 +191,7 @@ class Admin extends Blog
     public function deleteCommentJs()
     {
       if (!$this->isLogged())
-      header('Location: blog_index.html');
+      header('Location: dreamgym_index.html');
 
       $this->oUtil->getModel('Admin');
       $this->oModel = new \BlogPhp\Model\Admin;
@@ -204,7 +204,7 @@ class Admin extends Blog
     public function deleteComment()
     {
       if (!$this->isLogged())
-      header('Location: blog_index.html');
+      header('Location: dreamgym_index.html');
 
       $oPost = $this->oUtil->oPost = $this->oModel->getById($_GET['postid']); // Récupère les données du post
       $this->oUtil->getModel('Admin');
@@ -214,7 +214,7 @@ class Admin extends Blog
       $this->oModel->deleteComment($iId); // supprime le commentaire
       $this->oModel->deleteVote($iId); // supprime les signalements du commentaire
 
-      header("Location: blog_post_$oPost->id.html");
+      header("Location: dreamgym_post_$oPost->id.html");
     }
 
     // On obtient la couleur associé à chaque table

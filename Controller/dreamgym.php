@@ -6,7 +6,7 @@ if (empty($_GET['a'])) {
 	$_GET['a'] = 'index';
 }
 
-class Blog
+class dreamgym
 {
   const MAX_POSTS = 2;
 
@@ -23,7 +23,7 @@ class Blog
 
     /** Récupère la classe Model dans toute la class controller **/
     $this->oUtil->getModel('Blog');
-    $this->oModel = new \BlogPhp\Model\Blog;
+    $this->oModel = new \BlogPhp\Model\dreamgym;
 
     /** Récupère l'identifiant de publication dans le constructeur afin d'éviter la duplication du même code **/
     $this->_iId = (int) (!empty($_GET['id']) ? $_GET['id'] : 0);
@@ -51,7 +51,7 @@ class Blog
   {
     if(empty($_GET['id']))
     {
-      header('Location: blog_index.html');
+      header('Location: dreamgym_index.html');
     }
 
     $this->oUtil->oPost = $this->oModel->getById($this->_iId);
@@ -68,7 +68,7 @@ class Blog
         {
           $aData = array('user_id' => $getUserId->id, 'comment' => htmlspecialchars($_POST['comment']), 'post_id' => $_GET['id']);
           $this->oModel->addComment($aData);
-          ?> <script>window.location.replace('blog_post_<?= $_GET['id'] ?>.html');</script> <?php
+          ?> <script>window.location.replace('dreamgym_post_<?= $_GET['id'] ?>.html');</script> <?php
           $this->oUtil->sSuccMsg = 'Le Commentaire a été posté !';
         }
     }
@@ -79,11 +79,11 @@ class Blog
   }
 
 	// On obtient tous les posts puis on affiche la page chapters.php
-  public function chapters()
+  public function programmes()
   {
     $this->oUtil->oPosts = $this->oModel->getAll();
 
-    $this->oUtil->getView('chapters');
+    $this->oUtil->getView('programmes');
   }
 
 
@@ -91,7 +91,7 @@ class Blog
 	public function login()
 	{
 			if ($this->isLogged())
-					header('Location: ' . ROOT_URL . 'blog_index.html');
+					header('Location: ' . ROOT_URL . 'dreamgym_index.html');
 
 			if (isset($_POST['submit']))
 			{
@@ -112,13 +112,13 @@ class Blog
 					if ($oIsAdmin->admin != null)
 					{
 						$_SESSION['is_admin'] = $oIsAdmin->pseudo; // Admin est connecté maintenant
-						header('Location: ' . ROOT_URL . 'blog_index.html');
+						header('Location: ' . ROOT_URL . 'dreamgym_index.html');
 						exit;
 					}
 					else
 					{
 						$_SESSION['is_user'] = $oIsAdmin->pseudo; // user est connecté maintenant
-						header('Location: ' . ROOT_URL . 'blog_index.html');
+						header('Location: ' . ROOT_URL . 'dreamgym_index.html');
 						exit;
 					}
 				}
@@ -132,7 +132,7 @@ class Blog
 	public function registration()
 	{
 		if ($this->isLogged())
-			header('Location: blog_index.html');
+			header('Location: dreamgym_index.html');
 
 		if (isset($_POST['submit']))
 		{
@@ -165,7 +165,7 @@ class Blog
 			{
 				$aData = array('email' => $sEmail, 'pseudo' => $sPseudo, 'password' => sha1($sPassword));
 				$this->oModel->addUser($aData);
-				?> <script>window.location.replace('blog_login.html');</script> <?php
+				?> <script>window.location.replace('dreamgym_login.html');</script> <?php
 				$this->oUtil->sSuccMsg = 'Votre compte a été créé, vous pouvez maintenant vous connecter';
 			}
 
@@ -205,7 +205,7 @@ class Blog
 	public function logout()
 	{
 		if (!$this->isLogged())
-			header('Location: blog_index.html');
+			header('Location: dreamgym_index.html');
 
 		if (!empty($_SESSION))
 		{
@@ -224,7 +224,7 @@ class Blog
 	public function signal ()
 	{
 		if ($this->userIsLogged())
-			header('Location: blog_index.html');
+			header('Location: dreamgym_index.html');
 
 		if ($_SERVER['REQUEST_METHOD'] != 'POST')
 		{
@@ -253,7 +253,7 @@ class Blog
 		{
 			$this->oUtil->getView('not_found');
 		}
-		header('Location: ' . ROOT_URL . 'blog_post_' . $_GET['postid'] . '.html#comment_ink');
+		header('Location: ' . ROOT_URL . 'dreamgym_post_' . $_GET['postid'] . '.html#comment_ink');
 	}
 
 

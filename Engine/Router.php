@@ -8,7 +8,7 @@ class Router
     public static function run (array $aParams)
     {
         $sNamespace = 'BlogPhp\Controller\\';
-        $sDefCtrl = $sNamespace . 'Blog';
+        $sDefCtrl = $sNamespace . 'dreamgym';
         $sCtrlPath = ROOT_PATH . 'Controller/';
         $sCtrl = ucfirst($aParams['ctrl']); // ucfirst — Met le premier caractère en majuscule
 
