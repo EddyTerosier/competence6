@@ -34,7 +34,7 @@ class Admin extends dreamgym
         else
         {
           $this->oUtil->getModel('Admin');
-          $this->oModel = new \blogPhp\Model\Admin;
+          $this->oModel = new \BlogPhp\Model\Admin;
 
           $aData = array('post_id' => $_GET['id'], 'title' => $_POST['title'], 'body' => $_POST['body']);
           $this->oModel->update($aData);
@@ -81,7 +81,7 @@ class Admin extends dreamgym
             $this->oUtil->getModel('Admin');
             $this->oModel = new \BlogPhp\Model\Admin;
 
-            $aData = array('title' => $_POST['title'], 'body' => $_POST['body'], 'created_date' => date('Y-m-d H:i:s'));
+            $aData = array('title' => $_POST['title'], 'body' => $_POST['body']);
             $this->oModel->add($aData);
 
             if (!empty($_FILES['image']['name']))
@@ -89,7 +89,8 @@ class Admin extends dreamgym
               $file = $_FILES['image']['name'];
               $extensions = ['.png','.jpg','.jpeg','.gif','.PNG','.JPG','.JPEG','.GIF'];
               $extension = strrchr($file, '.');
-              if(!in_array($extension,$extensions)){
+              if(!in_array($extension,$extensions))
+              {
         				  $this->oUtil->sErrMsg = "Cette image n'est pas valable";
         			}
               $this->oModel->postImg($_FILES['image']['tmp_name'], $extension);

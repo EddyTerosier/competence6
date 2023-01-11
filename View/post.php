@@ -7,7 +7,7 @@
         <!-- Article -->
 
         <?php if (empty($this->oPost)): ?>
-            <h1>cet article n'existe pas !</h1>
+            <h1>ce programme n'existe pas !</h1>
         <?php else: ?>
 
             <article>

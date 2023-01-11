@@ -22,7 +22,7 @@ class dreamgym
     $this->oUtil = new \BlogPhp\Engine\Util;
 
     /** Récupère la classe Model dans toute la class controller **/
-    $this->oUtil->getModel('Blog');
+    $this->oUtil->getModel('dreamgym');
     $this->oModel = new \BlogPhp\Model\dreamgym;
 
     /** Récupère l'identifiant de publication dans le constructeur afin d'éviter la duplication du même code **/
@@ -78,7 +78,7 @@ class dreamgym
     $this->oUtil->getView('post');
   }
 
-	// On obtient tous les posts puis on affiche la page chapters.php
+	// On obtient tous les posts puis on affiche la page programmes.php
   public function programmes()
   {
     $this->oUtil->oPosts = $this->oModel->getAll();

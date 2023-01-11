@@ -46,7 +46,7 @@ class dreamgym
            Users.pseudo,
            Comments.id
     FROM Comments
-    JOIN Users
+    // JOIN Users
     ON Comments.user_id = Users.id
     WHERE post_id = '{$_GET['id']}'
     ORDER BY date DESC
